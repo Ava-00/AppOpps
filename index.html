@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AppOpps - campaign comparison HQ</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="dash">
+
+  <header class="top">
+    <div class="wordmark">AppOpps</div>
+    <h1 class="page-title">Campaign comparison HQ</h1>
+    <p class="sub">Five landing pages for the same product - a job application tracker run like an operation - each briefed for a different kind of recruit. Simulated visitors from five personas engage with all five pages. The system learns which sections and CTAs actually held the line and converted, then drafts a new operation from those patterns - no external AI model required.</p>
+  </header>
+
+  <div class="trail"><div class="pin"></div><div class="seg"></div><div class="pin"></div><div class="seg"></div><div class="pin"></div><div class="seg"></div><div class="pin"></div><div class="seg"></div><div class="pin"></div></div>
+
+  <section class="panel">
+    <h2>1. Initial deployments</h2>
+    <p class="panel-desc">Same product, five different campaigns - messaging, structure, and orders of engagement all vary.</p>
+    <div class="pages-grid" id="pagesGrid"></div>
+  </section>
+
+  <section class="panel">
+    <h2>2. Run the field test</h2>
+    <p class="panel-desc">Simulates persona-weighted visitor sessions across every page currently deployed, then analyzes the results and drafts the next operation.</p>
+    <div class="controls">
+      <button class="primary" id="runBtn">Launch field test &amp; generate next operation</button>
+      <span class="badge" id="sessionBadge">no recon logged yet</span>
+      <span class="badge" id="genBadge">operation 0</span>
+    </div>
+    <div id="historyWrap" style="display:none;">
+      <p class="panel-desc" style="margin-bottom:6px;">Conversion rate by operation (top performer deployed at that point)</p>
+      <div class="history" id="historyList"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="behaviorSection" style="display:none;">
+    <h2>3. Recon report</h2>
+    <p class="panel-desc">Aggregated from every simulated session in this run.</p>
+    <div id="behaviorPanel"></div>
+  </section>
+
+  <section class="panel" id="rankSection" style="display:none;">
+    <h2>4. After-action ranking</h2>
+    <p class="panel-desc">Ranked by simulated conversion rate.</p>
+    <div id="rankPanel"></div>
+  </section>
+
+  <section class="panel" id="genSection" style="display:none;">
+    <h2>5. Next operation, generated</h2>
+    <p class="panel-desc">Two candidate operations are drafted from what was learned, then each is simulated independently - only the better performer is deployed here.</p>
+    <div id="genPanel"></div>
+    <div class="controls">
+      <button class="secondary" id="acceptBtn">Deploy &amp; run next operation</button>
+    </div>
+  </section>
+
+  <section class="panel" id="explainSection" style="display:none;">
+    <h2>6. Debrief - what changed and why</h2>
+    <div id="explainPanel"></div>
+  </section>
+
+</div>
+
+<script src="js/personas.js"></script>
+<script src="js/pages-config.js"></script>
+<script src="js/simulator.js"></script>
+<script src="js/analysis.js"></script>
+<script src="js/generator.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
